@@ -13,7 +13,7 @@ app.config['SECRET_KEY'] = 'asdhsi-98h-2gh0179bh02937hb092-9nbnu'
 
 class EmailNameForm(FlaskForm):
     name = StringField('What is your name?', validators=[DataRequired()])
-    email = StringField('What is your email?', validators=[DataRequired()])
+    email = StringField('What is your email?', validators=[DataRequired(), Email("Please Enter Your U of T Email Address")])
     submit = SubmitField('Submit')
 
 @app.route('/', methods=['GET', 'POST'])
